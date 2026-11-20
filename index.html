@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="icon" type="image/png" href="https://64.media.tumblr.com/7bdc610d6cebc9717f83749912eafb01/4388f8ea6631bbf4-a7/s500x750/3157a7973f88fe8cb75bf624529cbc23986a5862.pnj">
+    <link rel="stylesheet" href="stylesheet.css" />
+    <meta charset="utf-8" />
+    <title>POS SYSTEM</title>
+</head>
+<body>
+    <div id="cursor"></div>
+    <!-- START SCREEN -->
+    <div id="startScreen" class="screen">
+        <h1>Cozy Constellations</h1>
+        <p class="">Dine in among the stars.</p>
+        <button onclick="showLogin()">Start</button>
+    </div>
+
+    <!-- LOGIN SCREEN -->
+    <div id="loginScreen" class="screen" style="display:none;">
+        <h2>Enter your name</h2>
+        <input type="text" id="usernameInput" placeholder="Your name">
+        <button onclick="loginUser()">OK</button>
+    </div>
+
+    <!-- MAIN POS -->
+    <div id="posSystem" style="display:none;">
+
+        <div class="container">
+            <div class="sidebar">
+                <img class="cozy" src="cozy.png" />
+                <h2>Cozy Constellations</h2>
+
+                <button class="category" onclick="filterProducts('all'), showCategory('all')">
+                    <img class="iconCat" src="constellationhehe.png" /> All
+                </button>
+
+                <button class="category" onclick="filterProducts('beverages'), showCategory('beverages')">
+                    <img class="iconCat" src="poinsettia.png" /> Beverages
+                </button>
+
+                <button class="category" onclick="filterProducts('dessert'), showCategory('dessert')">
+                    <img class="iconCat" src="cakezzzz.png" /> Desserts
+                </button>
+            </div>
+
+            <div class="products">
+                <p id="welcomeText"></p>
+                <h1 id="all">ALL</h1>
+                <hr />
+                <br />
+                <div id="productList" class="product-grid"></div>
+            </div>
+
+            <div class="cart">
+
+                <div class="profile" onclick="goToLogin()">
+                    <p>My Profile</p>
+                    <img class="profpic" src="pfp2.jpg" />
+                </div>
+
+                <br />
+
+                <h2>My Cart</h2>
+                <img class="cartimg" src="shopping.png" id="cartIcon" />
+
+                <ul id="cartItems"></ul>
+
+                <p class="total">Total: ₱<span id="total">0</span></p>
+
+                <button class="checkout" id="checkoutBtn">
+                    Checkout!
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="javascript.js"></script>
+</body>
+</html>

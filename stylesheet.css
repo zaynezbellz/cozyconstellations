@@ -1,0 +1,471 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Barriecito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barriecito&family=Cherry+Bomb+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barriecito&family=Cherry+Bomb+One&family=Coming+Soon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barriecito&family=Cherry+Bomb+One&family=Coming+Soon&family=Hachi+Maru+Pop&display=swap');
+
+* {
+    cursor: none !important;
+}
+
+body {
+    font-family: "Barriecito", system-ui;
+    overflow: hidden;
+    background-image: url(bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: none;
+}
+
+#cursor {
+    z-index: 4440000000;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-image: url("maincursor.png");
+    background-size: cover;
+    pointer-events: none;
+}
+
+.screen {
+    border-radius: 30px;
+    left: 500px;
+    align-content: center;
+    position: fixed;
+    width: 500px;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(starbg.gif);
+    background-size: cover;
+    color: white;
+    z-index: 100;
+}
+
+    .screen button {
+        padding: 10px 25px;
+        font-size: 20px;
+        margin-top: 20px;
+        cursor: pointer;
+        font-family: "Coming Soon", cursive;
+        border-radius: 30%;
+        font-size: 19px;
+        background: #003049;
+        color: white;
+        border: none;
+        top: 20px;
+        border: 2px dashed white;
+        cursor: pointer;
+        align-content: center;
+        display: flex;
+        transition: all 0.5s ease;
+    }
+
+
+        .screen button:hover {
+            transform: translateY(-3px) scale(1.2);
+            background: #4C8CE4;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+        }
+
+.screen button:active {
+    transform: scale(0.95);
+}
+
+#usernameInput{
+    border-radius: 20px;
+    font-size: 25px;
+    padding: 20px;
+}
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+#welcomeText{
+    font-size: 40px;
+    text-align: center;
+    margin: 10px;
+}
+
+.sidebar {
+    background: #4B2E2B;
+    width: 200px;
+    padding: 20px;
+    height: 100vh;
+    color: white;
+}
+
+
+
+.category {
+    font-family: "Coming Soon", cursive;
+    width: 120%;
+    left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 5px;
+    padding-left: 0;
+    margin: 20px;
+    border: none;
+    font-size: 20px;
+    background: white;
+    cursor: pointer;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+    .category:hover {
+        color: white;
+        transform: translateY(-5px) translateX(-5px) scale(1.05);
+        background: linear-gradient(90deg,rgba(86, 47, 0, 1) 0%, rgba(217, 176, 124, 1) 65%, rgba(86, 47, 0, 1) 100%);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+    }
+
+    .category:active {
+        transform: scale(1.2);
+        background: linear-gradient(90deg,rgba(224, 183, 135, 1) 0%, rgba(242, 241, 240, 1) 48%, rgba(240, 197, 141, 1) 100%);
+        color: black;
+    }
+
+
+
+.products {
+    font-family: "Cherry Bomb One", system-ui;
+    letter-spacing: 5px;
+    justify-content: center;
+    background-color: #1A120B;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    flex: 1;
+    color: white;
+    padding-bottom: 100px;
+}
+.product {
+    opacity: 0;
+}
+
+    .product.show {
+        animation: slideUp 0.5s ease forwards;
+    }
+
+.product {
+    padding: 20px;
+    max-height: 4500px;
+    display: grid;
+    grid-template-columns: repeat(2, 100px);
+    font-family: "Coming Soon", cursive;
+    background: #FFF8F0;
+    border-radius: 10px;
+    border: 3px solid #1A120B;
+    color: black;
+    transition: all 0.4s ease-in-out;
+}
+
+    .product:hover {
+        border-radius: 50px;
+    }
+
+
+    .product button {
+        font-family: "Coming Soon", cursive;
+        border-radius: 30%;
+        padding: 5px;
+        font-size: 19px;
+        background: #4B2E2B;
+        color: white;
+        border: none;
+        top: 20px;
+        border: 2px dashed white;
+        cursor: pointer;
+        align-content: center;
+        display: flex;
+        transition: all 0.25s ease;
+    }
+
+            .product button:hover {
+                transform: translateY(-3px) translateX(-4px) scale(1.05);
+                background: #6B3E3A;
+                box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+            }
+
+            .product button:active {
+                transform: scale(0.95);
+            }
+
+        .product button:active {
+            transform: scale(1.05);
+        }
+        .cart {
+            overflow: scroll;
+            font-family: "Hachi Maru Pop", cursive;
+            justify-content: center;
+            text-align: center;
+            width: 290px;
+            background: #3C2A21;
+            color: white;
+            padding: 20px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+    .cart ul {
+        list-style: none;
+        padding: 0;
+        overflow-y: auto;
+        flex: 1;
+    }
+
+.checkout {
+    width: 100%;
+    padding: 10px;
+    background: #D5CEA3;
+    border: none;
+    font-size: 20px;
+    font-family: "Coming Soon", cursive;
+    position: sticky;
+    bottom: 30px;
+    margin-top: 10px;
+    transition: all 0.9s ease-in-out;
+}
+
+    .checkout:hover {
+        transform: translateY(-2px) scale(1.05);
+        background: #FCBF49;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+    }
+
+    .checkout:active {
+        transform: scale(0.95);
+    }
+
+#all{
+    text-align: center;
+    font-size: 50px;
+}
+.subcategory {
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+.subTitle {
+    text-align: center;
+    margin-bottom: 10px;
+    
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.subTitle {
+    width: 100%;
+    display: block;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 30px;
+    transition: all 1.0s ease-in-out;
+}
+.subTitle:hover{
+    transform: scale(1.2);
+}
+
+.profpic{
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.profile {
+    font-size: 20px;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    background-color: #8C5A3C;
+    height: 10%;
+    width: 80%;
+    border-radius: 20px;
+    color: white;
+}
+
+.cozy {
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.cartimg{
+    align-content: center;
+    display: flex;
+    margin-left: 50px;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    transition: all 0.4s ease-in-out;
+}
+.cartimg:hover{
+    transform: translateX(30px) rotate(4deg);
+}
+
+
+hr{
+    background-color: black;
+    color: white;
+    border: 1px dashed white;
+}
+
+
+.itemzzz {
+    color: black;
+    width: 80%;
+    height: 30%;
+    padding: 20px;
+    background-color: #EED9B9;
+}
+
+.decreasebtn {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid #3C2A21;
+    background: #FFF8F0;
+    color: #3C2A21;
+    font-size: 16px;
+}
+
+.increasebtn {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid #3C2A21;
+    background: #FFF8F0;
+    color: #3C2A21;
+    font-size: 16px;
+    text-align: center;
+}
+
+.total{
+    padding-bottom: 20px;
+    font-size: 25px;
+}
+
+.productDef{
+    max-height: 30px;
+    display: flex;
+    text-align: right;
+    font-size: 9px;
+    font-style: italic;
+}
+
+.productPrice {
+    font-size: 30px;
+    text-align: center;
+    padding: 10px;
+}
+
+
+.addbtnnn {
+    font-size: 15px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-img{
+    width: 150px;
+    height: 150px;
+    transform: rotate(-4deg);
+    margin-right: 80px;
+    transition: transform 1.0s ease-in-out;
+}
+
+    .product-img:hover{
+        transform: translateX(-30px) rotate(4deg) scale(1.05);
+    }
+
+.productNAME {
+    top: 50px;
+    background-color: #FDC3A1;
+    padding: 4px;
+    text-align: left;
+    font-size: 14px;
+    width: 100%;
+}
+
+
+.iconCat{
+    width: 25px;
+    height: 25px;
+    margin-left: 30px;
+}
+
+
+#productzzzz {
+    transition: all 0.7s ease-in-out;
+}
+#productzzzz:hover {
+    transform: translateX(5px) scale(1.1);
+}
+
+
+
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+.flying-star {
+    position: fixed;
+    font-size: 20px;
+    pointer-events: none;
+    z-index: 30;
+    transition: all 0.8s ease-in-out;
+}
+
+    .flying-star:nth-child(odd) {
+        font-size: 16px;
+    }
+
+    .flying-star:nth-child(even) {
+        font-size: 22px;
+    }
+
+
+
+@keyframes cartBounce {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: rotate(3deg) scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.cartimg.bounce {
+    animation: cartBounce 0.4s;
+}
